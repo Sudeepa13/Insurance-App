@@ -21,7 +21,7 @@ stages {
          }
     stage('Create Docker image of App') {
        steps {
-         sh 'docker build -t sudeedockeracc/insure-me-app:1.0 .'
+         sh 'docker build -t sudeedockeracc/insuranceapp:1.0 .'
              }
          }
      stage('Docker Image Push') {
@@ -29,7 +29,7 @@ stages {
          withCredentials([usernamePassword(credentialsId: 'docid', passwordVariable: 'docpwd', usernameVariable: 'docusr')]) {
          sh 'docker login -u ${docusr} -p ${docpwd}'
        }
-         sh 'docker push sudeedockeracc/insure-me-app:1.0'
+         sh 'docker push sudeedockeracc/insuranceapp:1.0'
    }    
      }   
     /* stage('Application Deploy-container') {
