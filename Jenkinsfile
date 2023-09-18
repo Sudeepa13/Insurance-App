@@ -32,12 +32,12 @@ stages {
          sh 'docker push sudeedockeracc/insuranceapp:1.0'
    }    
      }   
-    /* stage('Application Deploy-container') {
+    stage('Application Deploy-container') {
           steps {
             
-            ansiblePlaybook credentialsId: 'ubuntu-ssh', disableHostKeyChecking: true, installation: 'ansible', playbook: 'deploy.yml'
+           ansiblePlaybook credentialsId: 'ubuntu', disableHostKeyChecking: true, playbook: 'deploy.yml'
                 }
-          } */
+          } 
     }
 }
 
