@@ -1,0 +1,36 @@
+Following are the problems someone who is building an Banking-Insurance Application might encounter.
+✓ Building Complex builds is difficult
+✓ Manual efforts to test various components/modules of the project
+✓ Incremental builds are difficult to manage, test and deploy
+✓ Creation of infrastructure and configure it manually is very time consuming
+✓ Continuous manual monitoring the application is quite challenging.
+In order to implement a POC, we get requested to develop a mavenized microservice using
+spring boot and in memory h2 database.
+1. a microservice which exposes below mentioned endpoints as APIs and uses in memory
+h2 database to store the data.
+a. /createPolicy (HTTP Method : POST) (Request Body : JSON)
+b. /updatePolicy/{policy id} (HTTP Method : PUT ) (Request Body : JSON)
+c. /viewPolicy/{policy id} (HTTP Method : GET ) ( No Request Body )
+d. /deletePolicy/{policy id} (HTTP Method : DELETE) ( No Request Body)
+2. We are Given or Write necessary Junit testcase.
+3. We Generate HTML report using TestNG.
+4. Push the given code into our GitHub Repository.
+
+Later, we get asked to implement Continuous Integration & Continuous Deployment using
+following tools:
+✓ Git - For version control for tracking changes in the code files
+✓ Jenkins - For continuous integration and continuous deployment
+✓ Docker - For deploying containerized applications
+✓ Ansible - Configuration management tools
+✓ Selenium - For automating tests on the deployed web application
+✓ AWS : For creating ec2 machines as servers and deploy the web application.
+Generally the task will be about how to test the services and deploy code to dev/stage/prod etc, just
+on a click of button.
+Business challenge/requirement
+As soon as the developer pushes the updated code on the GIT master branch, the Jenkins job
+should be triggered using a GitHub Webhook and Jenkins job should be triggered, The code
+should be checked out, compiled, tested, packaged and containerized and deployed to the
+preconfigured test-server automatically.
+The deployment should then be tested using a test automation tool (Selenium), and if the build
+is successful, it should be deployed to the prod server. All this should happen automatically and
+should be triggered from a push to the GitHub master branch.
