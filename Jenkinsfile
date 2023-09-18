@@ -11,7 +11,7 @@ stages {
     }
    stage('Build Package') {
     steps {
-       sh 'Build Package'
+       sh 'mvn package'
     }
   }
 
