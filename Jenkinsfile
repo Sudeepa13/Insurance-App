@@ -19,7 +19,27 @@ stages {
          publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: '/var/lib/jenkins/workspace/Insurance-Project/target/surefire-reports', reportFiles: 'index.html', reportName: 'HTML Report', reportTitles: '', useWrapperFileDirectly: true])
              }
          }
+    stage('Create Docker image of App') {
+       steps {
+         sh 'docker build -t sudeedockeracc/insure-me-app:1.0 .'
+             }
+         }
+     stage('Docker Image Push') {
+       steps {
+         withCredentials([usernamePassword(credentialsId: 'docid', passwordVariable: 'docpwd', usernameVariable: 'docusr')]) {
+         sh 'docker login -u ${docusr} -p ${docpwd}'
+       }
+         sh 'docker push sudeedockeracc/insure-me-app:1.0'
+   }    
+     }   
+    /* stage('Application Deploy-container') {
+          steps {
+            
+            ansiblePlaybook credentialsId: 'ubuntu-ssh', disableHostKeyChecking: true, installation: 'ansible', playbook: 'deploy.yml'
+                }
+          } */
+    }
 }
 
-}
+
 
