@@ -9,6 +9,13 @@ stages {
      git 'https://github.com/Sudeepa13/Insurance-App.git'
         }
     }
-   
+   stage('Build Package') {
+    steps {
+       sh 'mvn package'
+    }
+  }
+
 }
+
 }
+
