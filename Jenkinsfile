@@ -9,7 +9,7 @@ stages {
      git 'https://github.com/Sudeepa13/Insurance-App.git'
         }
     }
-   stage('Build Package') {
+  /* stage('Build Package') {
     steps {
        sh 'mvn package'
     }
@@ -37,7 +37,7 @@ stages {
             
            ansiblePlaybook credentialsId: 'ubuntu', disableHostKeyChecking: true, playbook: 'deploy.yml'
                 }
-          } 
+          } */ 
     }
 }
 
