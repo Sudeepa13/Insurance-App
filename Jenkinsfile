@@ -9,12 +9,12 @@ stages {
      git 'https://github.com/Sudeepa13/Insurance-App.git'
         }
     }
-  /* stage('Build Package') {
+    stage('Build Package') {
     steps {
        sh 'mvn package'
     }
   }
-   stage('Publish HTML Reports') {
+  /* stage('Publish HTML Reports') {
        steps {
          publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: '/var/lib/jenkins/workspace/Insurance-Project/target/surefire-reports', reportFiles: 'index.html', reportName: 'HTML Report', reportTitles: '', useWrapperFileDirectly: true])
              }
